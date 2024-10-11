@@ -12,7 +12,7 @@ Comment.init(
       autoIncrement: true,
     },
     comment_text: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
@@ -28,6 +28,16 @@ Comment.init(
         model: 'post',
         key: 'id',
       },
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
