@@ -1,0 +1,10 @@
+<h1>Welcome to the Tech Blog</h1>
+
+{{#each posts}}
+    <div class="post">
+        <h2><a href="/post/{{id}}">{{title}}</a></h2>
+        <p>Posted by {{User.username}} on {{createdAt}}</p>
+    </div>
+{{else}}
+    <p>No blog posts yet. Be the first to write one!</p>
+{{/each}}
