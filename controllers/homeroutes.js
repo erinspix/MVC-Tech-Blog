@@ -31,6 +31,43 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET route for a single post by ID
+router.get('/post/:id', async (req, res) => {
+  try {
+    // Find the post by its ID, including the user who posted it and any comments associated with it
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,   // Include the user who created the post
+          attributes: ['username'],
+        },
+        {
+          model: Comment, // Include comments on the post, and the user who made each comment
+          include: [User],
+        },
+      ],
+    });
+
+    // If the post doesn't exist, send a 404 error
+    if (!postData) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+
+    // Serialize the data
+    const post = postData.get({ plain: true });
+
+    // Render the 'post' view and pass the post data to it
+    res.render('post', {
+      post,
+      logged_in: req.session.logged_in, // Include the logged_in status to show different UI to logged in users
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
 // GET route for the login page.
 // This route renders the login page if the user is not already logged in.
 router.get('/login', (req, res) => {
