@@ -3,12 +3,16 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // POST route to handle user signup (registration).
-// This route will be accessed when a user submits the signup form.
+// POST route to handle user signup (registration).
+// POST route to handle user signup (registration).
 router.post('/signup', async (req, res) => {
   try {
-    // Create a new user in the database using the submitted username and password from the request body.
+    console.log(req.body); // Log request body to make sure email, username, and password are received
+    
+    // Create a new user in the database using the submitted username, email, and password from the request body.
     const newUser = await User.create({
       username: req.body.username,  // The username from the signup form.
+      email: req.body.email,        // The email from the signup form.
       password: req.body.password,  // The password from the signup form.
     });
 
@@ -19,13 +23,14 @@ router.post('/signup', async (req, res) => {
       res.status(200).json(newUser);      // Send a successful response with the newly created user.
     });
   } catch (err) {
-    // If an error occurs during user creation, send a 500 Internal Server Error response.
-    res.status(500).json(err);
+    console.error(err); // Log any error to the console
+    res.status(500).json(err); // Return a 500 status with the error message
   }
 });
 
+
+
 // POST route to handle user login.
-// This route will be accessed when a user submits the login form.
 router.post('/login', async (req, res) => {
   try {
     // Find a user in the database by the username submitted from the login form.
@@ -48,6 +53,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // POST route to handle user logout.
 // This route will be accessed when the user clicks the logout button.

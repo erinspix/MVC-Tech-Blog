@@ -4,7 +4,7 @@ const router = require('express').Router();
 // Import the homeRoutes and apiRoutes modules.
 // homeRoutes handles routes related to rendering views (like homepage, login, dashboard).
 // apiRoutes handles all API-related routes (like user authentication, posts, comments).
-const homeRoutes = require('./homeRoutes');
+const homeRoutes = require('./homeroutes');
 const apiRoutes = require('./api');
 
 // Use the homeRoutes for any requests that match the root URL ("/").
