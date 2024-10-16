@@ -7,17 +7,13 @@ const { Post } = require('../../models');
 // POST route to create a new blog post.
 router.post('/', async (req, res) => {
   try {
-    // Create a new post in the database with the post title and content.
     const newPost = await Post.create({
-      title: req.body.title,        // Post title from the request body
-      content: req.body.content,    // Post content from the request body
-      user_id: req.session.user_id, // Associate the post with the logged-in user using session data
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id,  // Make sure the logged-in user's ID is attached
     });
-
-    // Send the newly created post data as a JSON response.
     res.status(200).json(newPost);
   } catch (err) {
-    // If an error occurs, send a 500 Internal Server Error response.
     res.status(500).json(err);
   }
 });

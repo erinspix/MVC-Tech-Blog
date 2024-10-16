@@ -1,6 +1,8 @@
 <h2>{{title}}</h2>
 <p>Posted by {{User.username}} on {{createdAt}}</p>
 <p>{{content}}</p>
+<script src="/js/index.js"></script>
+<script src="/js/posts.js"></script>
 
 <h3>Comments</h3>
 {{#each comments}}
@@ -18,4 +20,4 @@
         <button type="submit">Submit</button>
     </form>
 {{/if}}
-<script src="./js/posts.js"></script>
+

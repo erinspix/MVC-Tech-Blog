@@ -21,9 +21,10 @@ router.get('/', async (req, res) => {
 
     // Render the 'homepage' view and pass in the posts and the logged-in status of the user.
     res.render('homepage', {
-      posts,                        // Array of all posts to be displayed on the homepage.
-      logged_in: req.session.logged_in, // Pass the user's login status to the template for conditional rendering.
+      posts,
+      logged_in: req.session.logged_in,
     });
+    
   } catch (err) {
     // If an error occurs, send a 500 Internal Server Error response.
     res.status(500).json(err);
