@@ -1,0 +1,27 @@
+[
+    {
+        "username": "Thalorian",
+        "email": "thalorian@elvenshire.com",
+        "password": "starfall2021"
+    },
+    {
+        "username": "Aerwynne",
+        "email": "aerwynne@dragonspire.net",
+        "password": "dragonfire123"
+    },
+    {
+        "username": "Bramor",
+        "email": "bramor@stoneforge.org",
+        "password": "forgekeeper789"
+    },
+    {
+        "username": "Lyandra",
+        "email": "lyandra@moonveil.co",
+        "password": "moondust456"
+    },
+    {
+        "username": "Kael'thas",
+        "email": "kaelthas@sunstrider.village",
+        "password": "phoenixrise987"
+    }
+]

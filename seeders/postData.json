@@ -1,0 +1,17 @@
+[
+    {
+        "title": "The Song of the Moonlit Blade",
+        "content": "Under the crescent moon, the warrior forged a pact with the ancient spirits, wielding a blade crafted from the stardust of forgotten realms.",
+        "user_id": 1
+    },
+    {
+        "title": "Whispers of the Enchanted Grove",
+        "content": "In the heart of the enchanted grove, the trees whispered secrets of the old world, where magic flowed like rivers, and every leaf held a story untold.",
+        "user_id": 2
+    },
+    {
+        "title": "Chronicles of the Eldertide",
+        "content": "As the Eldertide approached, the sky was bathed in a purple hue, signaling the return of the ancient wizards who once ruled the forgotten kingdoms.",
+        "user_id": 3
+    }
+]
