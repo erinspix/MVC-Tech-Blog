@@ -4,14 +4,14 @@ const { Post } = require('../../models');
 
 // POST route to create a new blog post.
 // This route will be accessed when a user creates a new post from the dashboard.
+// POST route to create a new blog post.
 router.post('/', async (req, res) => {
   try {
-    // Create a new post in the database.
-    // The content of the post (like title, content) is passed in the request body (req.body).
-    // The user_id is obtained from the session data of the logged-in user.
+    // Create a new post in the database with the post title and content.
     const newPost = await Post.create({
-      ...req.body,           // Spread the request body (req.body) which contains the post data.
-      user_id: req.session.user_id,  // Associate the post with the logged-in user using session data.
+      title: req.body.title,        // Post title from the request body
+      content: req.body.content,    // Post content from the request body
+      user_id: req.session.user_id, // Associate the post with the logged-in user using session data
     });
 
     // Send the newly created post data as a JSON response.
@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // PUT route to update an existing blog post by its ID.
 // This route will be accessed when a user wants to update a specific post.

@@ -1,25 +1,20 @@
 <h2>Your Dashboard</h2>
 
-<div>
-    <button id="new-post-btn">New Post</button>
-</div>
+<!-- Button to show the form -->
+<button id="new-post-btn">New Post</button>
 
+<!-- The form to create a new post -->
 <div id="new-post-form" style="display:none;">
-    <h3>Create a New Post</h3>
-    <form>
-        <label for="post-title">Title:</label>
-        <input type="text" id="post-title" name="title" required>
-        <label for="post-content">Content:</label>
-        <textarea id="post-content" name="content" required></textarea>
-        <button type="submit">Create Post</button>
-    </form>
-</div>
-<h2>Your Dashboard</h2>
-
-<p>Welcome, {{user.username}}!</p> <!-- Display the username -->
-
-<div>
-  <button id="new-post-btn">New Post</button>
+  <h3>Create a New Post</h3>
+  <form id="post-form">
+    <label for="post-title">Title:</label>
+    <input type="text" id="post-title" name="title" required>
+    
+    <label for="post-content">Content:</label>
+    <textarea id="post-content" name="content" required></textarea>
+    
+    <button type="submit">Create Post</button>
+  </form>
 </div>
 
 {{#each user.posts}}
@@ -32,14 +27,3 @@
 {{else}}
     <p>You haven't written any posts yet.</p>
 {{/each}}
-
-{{!-- {{#each user.posts}}
-    <div class="post">
-        <h3>{{title}}</h3>
-        <p>{{content}}</p>
-        <button class="edit-post-btn" data-id="{{id}}">Edit</button>
-        <button class="delete-post-btn" data-id="{{id}}">Delete</button>
-    </div>
-{{else}}
-    <p>You haven't written any posts yet.</p>
-{{/each}} --}}
