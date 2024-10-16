@@ -1,18 +1,12 @@
-<h2>Sign Up</h2>
-<script src="/js/index.js"></script>
-<script src="/js/posts.js"></script>
+<h2>Login</h2>
+<form id="login-form">
+    <label for="login-username">Username:</label>
+    <input type="text" id="login-username" name="username" required>
 
-<form id="signup-form">
-    <label for="signup-username">Username:</label>
-    <input type="text" id="signup-username" name="username" required>
+    <label for="login-password">Password:</label>
+    <input type="password" id="login-password" name="password" required>
 
-    <label for="signup-email">Email:</label> <!-- Add email input field -->
-    <input type="email" id="signup-email" name="email" required>
-
-    <label for="signup-password">Password:</label>
-    <input type="password" id="signup-password" name="password" required>
-    <button type="submit">Sign Up</button>
-    
+    <button type="submit">Login</button>
 </form>
 
-
+<script src="./js/login.js"></script>

@@ -44,9 +44,21 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// GET route for the signup page.
+// This route renders the signup page if the user is not already logged in.
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect them to the homepage.
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  // Render the 'signup' view if the user is not logged in.
+  res.render('signup');
+});
+
 // GET route for the dashboard page.
 // This route renders the user's dashboard, showing their own posts and user information.
-// GET route for the dashboard page.
 router.get('/dashboard', async (req, res) => {
   try {
     // If the user is not logged in, redirect them to the login page.
@@ -73,7 +85,6 @@ router.get('/dashboard', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 // Export the router to make these routes available for use in other parts of the application.
 module.exports = router;
