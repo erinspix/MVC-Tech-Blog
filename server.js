@@ -6,13 +6,14 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
 
+// Create server
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up sessions with cookies and the Sequelize session store
+// Set up session with cookies and Sequelize session store
 const sess = {
   secret: process.env.SESSION_SECRET || 'Super secret secret',
-  cookie: {},
+  cookie: {}, // Cookie configuration can be enhanced as needed
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({ db: sequelize }),
