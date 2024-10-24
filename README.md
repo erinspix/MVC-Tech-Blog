@@ -161,3 +161,5 @@ Screenshots:
 ![Home](./readme-images/mvc%20view%20post.png)
 ![Signup](./readme-images/mvc%20signup.png)
 ![Post View](./readme-images/mvc%20view%20post.png)
+## Deployed Application
+You can find the live version of the app here: [Tech Blog](https://mvc-tech-blog-hzc6.onrender.com)
