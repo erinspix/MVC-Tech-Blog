@@ -5,8 +5,8 @@
 <h3>Comments</h3>
 {{#each post.Comments}}
   <div class="comment">
-    <p>{{comment_text}}</p>
-    <p>— {{User.username}}, {{createdAt}}</p>
+    <p>{{this.comment_text}}</p>
+    <p>— {{this.User.username}}, {{this.createdAt}}</p>
   </div>
 {{else}}
   <p>No comments yet. Be the first to comment!</p>
@@ -17,6 +17,8 @@
     <textarea id="comment-text" placeholder="Add a comment"></textarea>
     <button type="submit">Submit</button>
   </form>
+{{else}}
+  <p>Please <a href="/login">log in</a> to add a comment.</p>
 {{/if}}
 
-<script src="/js/posts.js"></script>
+<script src="/js/comments.js"></script>
