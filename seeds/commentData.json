@@ -1,0 +1,28 @@
+[
+    {
+      "comment_text": "This is truly enlightening! As an elf, I feel this article really captures the essence of our coding magic.",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Orcish coding is strong, just like us orcs!",
+      "user_id": 2,
+      "post_id": 2
+    },
+    {
+      "comment_text": "The debugging tips saved me from a terrible curse in my code!",
+      "user_id": 4,
+      "post_id": 3
+    },
+    {
+      "comment_text": "I always knew dragons were intelligent creatures, and now it’s confirmed!",
+      "user_id": 3,
+      "post_id": 4
+    },
+    {
+      "comment_text": "Web security is no joke! Protect your sites from goblin hackers.",
+      "user_id": 5,
+      "post_id": 5
+    }
+  ]
+  

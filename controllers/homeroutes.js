@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll({
       include: [
         {
-          model: User,               // Include the User model to get the username of each post's creator.
-          attributes: ['username'],   // Only include the 'username' attribute from the User model.
+          model: User, // Include the User model to get the username of each post's creator.
+          attributes: ['username'],
         },
       ],
     });
@@ -24,52 +24,51 @@ router.get('/', async (req, res) => {
       posts,
       logged_in: req.session.logged_in,
     });
-    
   } catch (err) {
     // If an error occurs, send a 500 Internal Server Error response.
     res.status(500).json(err);
   }
 });
 
-// GET route for a single post by ID
+// GET route for a single post by ID.
 router.get('/post/:id', async (req, res) => {
   try {
-    // Find the post by its ID, including the user who posted it and any comments associated with it
+    // Find the post by its ID, including the user who posted it and any comments associated with it.
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
-          model: User,   // Include the user who created the post
+          model: User, // Include the user who created the post.
           attributes: ['username'],
         },
         {
-          model: Comment, // Include comments on the post, and the user who made each comment
+          model: Comment, // Include comments on the post, and the user who made each comment.
           include: [User],
         },
       ],
     });
 
-    // If the post doesn't exist, send a 404 error
+    // If the post doesn't exist, send a 404 error.
     if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 
-    // Serialize the data
+    // Serialize the data.
     const post = postData.get({ plain: true });
 
-    // Render the 'post' view and pass the post data to it
+    // Render the 'post' view and pass the post data to it.
     res.render('post', {
       post,
-      logged_in: req.session.logged_in, // Include the logged_in status to show different UI to logged in users
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
+    // Log the error and send a 500 Internal Server Error response.
     console.error(err);
     res.status(500).json(err);
   }
 });
 
 // GET route for the login page.
-// This route renders the login page if the user is not already logged in.
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect them to the homepage.
   if (req.session.logged_in) {
@@ -82,7 +81,6 @@ router.get('/login', (req, res) => {
 });
 
 // GET route for the signup page.
-// This route renders the signup page if the user is not already logged in.
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect them to the homepage.
   if (req.session.logged_in) {
@@ -95,7 +93,6 @@ router.get('/signup', (req, res) => {
 });
 
 // GET route for the dashboard page.
-// This route renders the user's dashboard, showing their own posts and user information.
 router.get('/dashboard', async (req, res) => {
   try {
     // If the user is not logged in, redirect them to the login page.
@@ -113,9 +110,9 @@ router.get('/dashboard', async (req, res) => {
     const user = userData.get({ plain: true });
 
     // Render the 'dashboard' view and pass in the user data and the logged-in status.
-    res.render('dashboard', { 
-      user,                          // Pass the user data to the template for rendering.
-      logged_in: true,                // Indicate that the user is logged in.
+    res.render('dashboard', {
+      user,
+      logged_in: true,
     });
   } catch (err) {
     // If an error occurs, send a 500 Internal Server Error response.

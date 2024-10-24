@@ -1,0 +1,28 @@
+[
+    {
+      "username": "Aeliana",
+      "email": "aeliana@elvenmail.com",
+      "password": "password123"
+    },
+    {
+      "username": "Thornblade",
+      "email": "thornblade@orc.com",
+      "password": "orcrulez"
+    },
+    {
+      "username": "Lunaria",
+      "email": "lunaria@moonrealm.org",
+      "password": "moonshine"
+    },
+    {
+      "username": "Galdor",
+      "email": "galdor@wizardspells.net",
+      "password": "gandalfsbrother"
+    },
+    {
+      "username": "Emberheart",
+      "email": "ember@fierymail.com",
+      "password": "flamekeeper"
+    }
+  ]
+  

@@ -1,0 +1,28 @@
+[
+    {
+      "title": "The Rise of Elven Magic in Programming",
+      "content": "The elves have a long tradition of magical code that powers their advanced systems. Here's how you can harness this knowledge in JavaScript.",
+      "user_id": 1
+    },
+    {
+      "title": "Orcish Coding Best Practices",
+      "content": "Orcs are known for their brute-force tactics, but they also have some solid coding practices that emphasize efficiency.",
+      "user_id": 2
+    },
+    {
+      "title": "The Wizard’s Guide to Debugging",
+      "content": "If your code is misbehaving, it might be cursed! Here’s a step-by-step approach to debugging your JavaScript spells.",
+      "user_id": 4
+    },
+    {
+      "title": "Why Dragons Prefer Python",
+      "content": "With its simplicity and versatility, Python has become the favorite language among dragons. Let’s explore why!",
+      "user_id": 3
+    },
+    {
+      "title": "Building Secure Web Fortresses",
+      "content": "Learn to build secure web applications that can withstand even the strongest attacks from goblins and hackers alike.",
+      "user_id": 5
+    }
+  ]
+  
