@@ -1,108 +1,140 @@
 /* General Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Comic Sans MS', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f8ff;
     margin: 0;
     padding: 20px;
     line-height: 1.6;
-    color: #333;
+    color: #444;
 }
 
 /* Header and Footer Styling */
 header, footer {
-    background-color: #282c34;
+    background-color: #FF6F61;
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
 }
 
 footer {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 300;
+    font-style: italic;
 }
 
 /* Navigation Links */
 nav a {
     color: #ffffff;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #00aaff;
+    color: #FFD700;
+    border-bottom: 2px solid #ffffff;
 }
 
 /* Headings */
 h1, h2, h3 {
-    color: #333333;
+    color: #4B0082;
     margin-bottom: 15px;
+    text-shadow: 2px 2px #FFA07A;
 }
 
 h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h2 {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    border-bottom: 2px solid #00aaff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
 h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 3px dashed #00BFFF;
+    padding-bottom: 8px;
 }
 
 /* Post and Comment Containers */
 .post, .comment {
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #dddddd;
-    padding: 15px;
+    background-color: #FAFAD2;
+    border-radius: 12px;
+    border: 2px solid #FFD700;
+    padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .post:hover, .comment:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Comment Section Styling */
 .comment p {
     margin: 10px 0;
-    color: #555555;
+    color: #4B0082;
 }
 
 .comment {
-    border-left: 4px solid #00aaff;
-    padding-left: 10px;
+    border-left: 5px solid #FF4500;
+    padding-left: 15px;
 }
 
 /* Buttons */
 button {
-    background-color: #00aaff;
+    background-color: #00BFFF;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding: 12px 25px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease-in-out;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #0077cc;
+    background-color: #1E90FF;
+    transform: translateY(-2px);
 }
 
 button:focus {
     outline: none;
+}
+
+button:active {
+    background-color: #4682B4;
+    transform: translateY(2px);
+}
+
+/* Form Inputs */
+input, textarea {
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #FF69B4;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
 }

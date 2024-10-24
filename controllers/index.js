@@ -1,5 +1,7 @@
 // Import the Express router to define route handling.
 const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+router.use('/users', userRoutes);
 
 // Import the homeRoutes and apiRoutes modules.
 // homeRoutes handles routes related to rendering views (like homepage, login, dashboard).
