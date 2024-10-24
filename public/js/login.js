@@ -1,11 +1,19 @@
-const loginForm = document.querySelector('#login-form');
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.querySelector('#login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', loginFormHandler);
+  } else {
+    console.log('Login form not found');
+  }
+});
 
-// Function to handle user login form submission
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
   const username = document.querySelector('#login-username').value.trim();
   const password = document.querySelector('#login-password').value.trim();
+
+  console.log('Username:', username, 'Password:', password); // Debugging
 
   if (username && password) {
     try {
@@ -16,15 +24,13 @@ const loginFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        // Redirect to dashboard upon successful login
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to log in.');
+        const data = await response.json();
+        alert(data.message || 'Failed to log in');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Error:', err);
     }
   }
 };
-
-loginForm?.addEventListener('submit', loginFormHandler);

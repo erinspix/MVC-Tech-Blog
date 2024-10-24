@@ -1,9 +1,12 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#username').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
+    // Get the form fields with updated IDs
+    const username = document.querySelector('#signup-username').value.trim();
+    const email = document.querySelector('#signup-email').value.trim();
+    const password = document.querySelector('#signup-password').value.trim();
+
+    console.log('Username:', username, 'Email:', email, 'Password:', password);
 
     if (username && email && password) {
         try {
@@ -28,4 +31,4 @@ const signupFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#signup-form')?.addEventListener('submit', signupFormHandler);
