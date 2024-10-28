@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
   
             if (response.ok) {
-              document.location.reload();  // Reload to show the new comment
+            document.location.reload();  // Reload to show the new comment
             } else {
               alert('Failed to add comment.');
             }

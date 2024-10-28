@@ -2,10 +2,10 @@
   <h2>{{post.title}}</h2>
   <p>Posted by {{post.User.username}} on {{post.createdAt}}</p>
   <p>{{post.content}}</p>
-
+<script src="/js/comment.js"></script>
   <h3>Comments</h3>
   <div class="comments-container">
-    {{#each post.Comments}}
+    {{#each post.comments}}
       <div class="comment">
         <p>{{this.comment_text}}</p>
         <p>— {{this.User.username}}, {{this.createdAt}}</p>
@@ -28,4 +28,3 @@
   {{/if}}
 </div>
 
-<script src="/js/comments.js"></script>
